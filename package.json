@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "openrouteservice-js": "^0.3.0",
+    "vue-yandex-maps": "^0.12.7"
+  },
+  "rules": {
+    "no-unused-vars": "off"
+  }
+"scripts": {
+  "install": "npm install"
+}
+}
