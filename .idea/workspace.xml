@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c9c9a37-ea19-4304-ab96-3cb6a684dcbc" name="Changes" comment="">
+    <list default="true" id="2c9c9a37-ea19-4304-ab96-3cb6a684dcbc" name="Changes" comment="//">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue_start.bat" beforeDir="false" afterPath="$PROJECT_DIR$/vue_start.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/flask_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/flask_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,7 @@
       <workItem from="1684754064389" duration="30000" />
       <workItem from="1685984758608" duration="1487000" />
       <workItem from="1686000738174" duration="216000" />
-      <workItem from="1686002206236" duration="2167000" />
+      <workItem from="1686002206236" duration="2911000" />
     </task>
     <task id="LOCAL-00001" summary="//">
       <created>1685998850147</created>
@@ -65,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685998850147</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="//">
+      <created>1686005149597</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686005149597</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

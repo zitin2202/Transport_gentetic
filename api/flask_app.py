@@ -9,6 +9,8 @@ from other import Print
 from Data import *
 import waitress
 
+app = Flask(__name__, static_folder='static', static_url_path='')
+CORS(app)
 
 @app.route("/build", methods=['POST'])
 def build():
