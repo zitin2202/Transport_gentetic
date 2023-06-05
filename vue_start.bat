@@ -1,2 +1,2 @@
 cd webapp
-npm run serve
+npm ci && npm run serve

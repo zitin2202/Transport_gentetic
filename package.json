@@ -6,7 +6,4 @@
   "rules": {
     "no-unused-vars": "off"
   }
-"scripts": {
-  "install": "npm install"
-}
 }
