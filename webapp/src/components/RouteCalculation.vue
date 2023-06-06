@@ -56,11 +56,18 @@ export default {
     GiveResult(result){
       this.$emit('updateRoutesEvent',result)
     },
+    ErrorResult(){
+      this.$emit('ErrorResultEvent')
+    },
     SubmitCoords(){
       this.DistanceCalculationRoutesByOpenRouteAPI()
       .then(response => {
-
         console.log(response.metrics)
+
+        if (response.metrics.flat().indexOf(null)>-1){
+          this.ErrorResult()
+          return
+        }
         let storeLen = response.storeLen
         let distances = response.metrics.slice(0,storeLen)
         let distanceBetweenDestinations = response.metrics.slice(storeLen)

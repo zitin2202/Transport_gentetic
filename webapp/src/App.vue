@@ -9,6 +9,9 @@
   <div v-if="isInputDisabled">
     <div class="d-flex justify-content-center align-items-center spinner"></div>
   </div>
+    <div v-if="errorMessage.length>0" class="alert alert-danger error-alert" role="alert" @click="errorMessage=''">
+      {{ errorMessage }}
+    </div>
   <div class="container">
     <yandex-map :key="mainMap.id" :center="[55.751244, 37.618423]" :zoom="12">
       <yandex-markers :markers="filteredMarkers" :mapId="mainMap.id" @updateMarkerObjectEvent="updateMarkerObject"/>
@@ -42,7 +45,7 @@
       </div>
     </div>
     <div class=" route-calculation text-center my-5">
-      <route-calculation :storeCoords="filteredStoreCoords" :destinationCoords="filteredDestinationCoords" :storeCount="storeCount" :destinationCount="destinationCount" :capacity="capacity" :IsMinCoords="IsMinCoords" :typeTransport="typeTransport" :typeMeasurement="typeMeasurement"  @updateRoutesEvent="updateRoutes"></route-calculation>
+      <route-calculation :storeCoords="filteredStoreCoords" :destinationCoords="filteredDestinationCoords" :storeCount="storeCount" :destinationCount="destinationCount" :capacity="capacity" :IsMinCoords="IsMinCoords" :typeTransport="typeTransport" :typeMeasurement="typeMeasurement"  @updateRoutesEvent="updateRoutes" @ErrorResultEvent="showErrorMessage"></route-calculation>
     </div>
     <div class="total-div" v-if="table.body.length>0">
       <table-result class="one-div-in-total" :table="this.table"/>
@@ -76,6 +79,7 @@ export default {
   components: {TableResult, MyCapacity, RouteCalculation, YandexMarkers, MySuggests,TypeTransport,TypeMetrics},
   data: function(){
     return {
+      errorMessage:"",
       isComputedLoad : false,
       isMapLoad :false,
       isEmptyLocalStorage : true,
@@ -172,6 +176,11 @@ export default {
 
     typeMeasurementUpdate(value){
       this.typeMeasurement = value
+    },
+
+    showErrorMessage(){
+      this.errorMessage = "Ошибка!\nНе был найден путь между некоторыми адресами"
+      setTimeout(()=>{this.errorMessage=""},10000)
     },
 
     markerLoad(index,suggests,coordinates){
@@ -729,6 +738,25 @@ body{
 .fa-btn:hover{
   color: #e1e1e1;
 }
+
+
+.error-container {
+}
+.error-alert{
+  align-content: center;
+  z-index: 5000;
+  transition: opacity 0.5s ease-in-out;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
 
 
 .spinner {
