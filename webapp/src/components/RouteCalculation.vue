@@ -62,7 +62,6 @@ export default {
     SubmitCoords(){
       this.DistanceCalculationRoutesByOpenRouteAPI()
       .then(response => {
-        console.log(response.metrics)
 
         if (response.metrics.flat().indexOf(null)>-1){
           this.ErrorResult()
@@ -84,7 +83,6 @@ export default {
       .then(response => response.json())
         .then(result => {
           // Обработка ответа от сервера Flask
-          console.log(result);
           this.GiveResult(result)
           this.$store.commit('GlobalSettingModule/setIsInputDisabled',false)
         })
@@ -115,7 +113,6 @@ export default {
           metrics: ['distance', 'duration'], // Метрики, которые вы хотите получить
         })
         .then(response => {
-          console.log(response);
           resolve({metrics:response[typeMeasurement],storeLen:storeLen,destinationLen:destinationLen})
         })
         .catch(error => {

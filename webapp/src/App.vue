@@ -199,7 +199,6 @@ export default {
       let suggests_value = suggests.values;
       let markers = suggests.markers;
       let address = suggests_value[index].value
-      console.log(address)
       if (address.length === 0){address=" "}
       window.ymaps.geocode(address).then((response) => {
         const geoObjects  = response.geoObjects;
@@ -209,7 +208,6 @@ export default {
 
         }
         else {
-          console.log(123)
           markers[index].coords = null;
 
           setTimeout(()=>{
@@ -250,7 +248,6 @@ export default {
     },
 
     updateRoutes(result){
-      console.log(result)
       this.removeRotesAtMap()
       this.routes.distribution = result.distribution
       this.routes.ways = result.ways
@@ -318,7 +315,6 @@ export default {
 
       let map = this.store.state.MainMapModule.MainMap.__v_raw
       let needObjects = atMapObjectsIndexes.map(index => this.routes.atMapObjects[index].__v_raw)
-      console.log(needObjects)
       for (var i = 0; i < needObjects.length; i++) {
         map.geoObjects.add(needObjects[i])
       }
@@ -414,11 +410,6 @@ export default {
     MarkersLocalLoad(suggests,coords){
       if (coords){
         for (var i=0;i<coords.length;i++){
-          // console.log(i)
-          // console.log(suggests)
-          // console.log(coords[i])
-          // console.log('________________')
-
           if (coords[i]!==null){
             this.markerLoad(i,suggests,coords[i])
 
@@ -454,7 +445,6 @@ export default {
       if (this.filteredStoreCoords.length>0 && this.filteredDestinationCoords.length>0){
         this.WhenMapLoad(this.updateRoutesAtMap)
         this.isComputedLoad = true
-        console.log("YESSSS")
       }
       else {
         watch(
@@ -463,7 +453,6 @@ export default {
               if (newValue.length>0 && this.isComputedLoad===false) {
                 this.WhenMapLoad(this.updateRoutesAtMap)
                 this.isComputedLoad = true
-                console.log("YESSSS")
               }
             },
         );
@@ -488,7 +477,6 @@ export default {
       this.table ={body:[], head: []};
 
       let map = this.$store.state.MainMapModule.MainMap.__v_raw
-      console.log(map)
       map.geoObjects.removeAll();
 
 

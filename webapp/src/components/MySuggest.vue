@@ -61,9 +61,7 @@ export default {
     },
   },
 
-  setup(props){
-    console.log(props.atMapObjectsIndexes)
-  },
+
 
   methods:{
     updateInput(event){
@@ -71,7 +69,6 @@ export default {
     },
     changeUpdateInput(event){
       setTimeout(() => {
-        console.log("change")
         this.updateInput(event)
       }, 200);
     },

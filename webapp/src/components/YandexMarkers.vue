@@ -20,13 +20,9 @@ export default {
 
   methods: {
     updateMarkerObject(object, index) {
-      console.log('emiiit')
       this.$emit('updateMarkerObjectEvent', object, index, this.markers)
 
     },
-  },
-  setup() {
-    console.log('markers')
   },
 
   computed: {
