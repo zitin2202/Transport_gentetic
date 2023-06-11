@@ -169,6 +169,7 @@ export default {
     },
     updateCapacity(value){
       this.capacity = Number(value);
+      if (this.capacity<1){this.capacity=1}
     },
     typeTransportUpdate(value){
       this.typeTransport = value
